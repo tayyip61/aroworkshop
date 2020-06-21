@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ostoy-frontend-svc
+  labels:
+    app: ostoy-frontend
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8080
+      targetPort: ostoy-port
+      protocol: TCP
+      name: ostoy
+  selector:
+    app: ostoy-frontend
